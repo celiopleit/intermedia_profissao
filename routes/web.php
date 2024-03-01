@@ -3,6 +3,7 @@
 use App\Http\Controllers\FluenciaController;
 use App\Http\Controllers\GrauInstrucaoController;
 use App\Http\Controllers\ProfissaoController;
+use App\Http\Controllers\CidadeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,3 +24,4 @@ Route::get('/', function () {
 Route::resource('fluencia', FluenciaController::class);
 Route::resource('profissao', ProfissaoController::class);
 Route::resource('grauinstrucao', GrauInstrucaoController::class);
+Route::resource('cidade', CidadeController::class);

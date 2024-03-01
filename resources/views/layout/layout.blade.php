@@ -28,7 +28,8 @@
                     <a class="dropdown-item" href="{{ route('fluencia.index') }}">Fluencia</a>
                     <a class="dropdown-item" href="{{ route('profissao.index') }}">Profissão</a>
                     <a class="dropdown-item" href="{{ route('grauinstrucao.index') }}">Grau de Instrução</a>
-                  </div>
+                    <a class="dropdown-item" href="{{ route('cidade.index') }}">Cidades</a>
+                </div>
 
           </li>
         </ul>
