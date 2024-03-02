@@ -5,7 +5,7 @@
 <div class="card-body">
     <div class="card" style="box-shadow: 10px 10px 20px rgba(212, 108, 108, 0.3); transform: perspective(1000px) rotateX(10deg); transition: transform 0.3s;">
         <div class="row row text-center"  style="margin-top: 1rem; display: flex; justify-content: center;">
-            <h2 style="transform: rotateX(-1deg);">Cadastro de Fluencia</h2>
+            <h2 style="transform: rotateX(-1deg);">Cadastro de Cidades</h2>
         </div>
     </div>
 </div>
@@ -53,8 +53,8 @@
                     <td>{{ \Str::limit($value->uf) }}</td>
 
                     <td class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-                        <form action="{{ route('cidade.destroy', $value->id) }}" method="POST">
-                            <a class="btn btn-primary btn-sm " href="{{ route('cidade.edit',$value->id) }}">Editar</a>
+                        <form action="{{ route('cidade.destroy', $value->codmunic) }}" method="POST">
+                            <a class="btn btn-primary btn-sm " href="{{ route('cidade.edit',$value->codmunic) }}">Editar</a>
                             @csrf
 
                             <input name="_method" type="hidden" value="DELETE">

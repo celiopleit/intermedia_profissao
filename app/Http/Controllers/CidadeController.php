@@ -61,26 +61,30 @@ class CidadeController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit($id)
+    public function edit($codmunic)
     {
 
-        $vcidade = Cidade::find($id);
-        return view('cidade.edit',compact('vcidade'));
+        $vuf         = Uf::all();
+        $vcidade = Cidade::where('codmunic',$codmunic)->first();
+        //dd($vcidade);
+        return view('cidade.edit',compact('vcidade','vuf'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $codmunic)
     {
+
+
         $request->validate([
             'municipio'   => 'required','max:60',
             'codmunic'    => 'required','max:10',
             'codregional' => 'required','max:10',
             'uf'          => 'required','max:2',
            ]);
-        $vcidade = Cidade::find($id);
 
+        $vcidade = Cidade::where('codmunic',$codmunic)->first();
         $vcidade->update($request->all());
 
         return redirect()->route('cidade.index')
@@ -90,9 +94,9 @@ class CidadeController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy($id)
+    public function destroy($codmunic)
     {
-        $vcidade = Cidade::find($id);
+        $vcidade = Cidade::find($codmunic);
 
         try{
            $vcidade->delete();

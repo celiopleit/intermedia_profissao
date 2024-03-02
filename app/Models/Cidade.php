@@ -10,6 +10,6 @@ class Cidade extends Model
     use HasFactory;
     protected $fillable = ['codregional','uf','codmunic','municipio'];
 	protected $table = 'cidade';
-	protected $primaryKey = 'id';
+	protected $primaryKey = 'codmunic';
 
 }

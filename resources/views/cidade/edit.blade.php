@@ -20,21 +20,53 @@
 
                 <div class="card card-primary">
                   <div class="card-header">
-                    <h3 class="card-title">Alterar Fluencia</h3>
+                    <h3 class="card-title">Alterar Cidade</h3>
                   </div>
 
                   <!-- Inicio do formulario -->
                     <div class="card-footer d-flex justify-content-center">
-                        <a class="btn btn-primary" href="{{ route('fluencia.index') }}">Voltar</a>
+                        <a class="btn btn-primary" href="{{ route('cidade.index') }}">Voltar</a>
                     </div>
-                    <form action="{{ route('fluencia.update',$vfluencia->id) }}" method="POST">
+                    <form action="{{ route('cidade.update',$vcidade->codmunic) }}" method="POST">
                         @csrf
                         @method('PUT')
                         <div class="card-body">
-                        <div class="form-group">
-                            <label for="inputDescricao">Descrição</label>
-                            <input type="text" name="descricao" value="{{$vfluencia->descricao}}"  class="form-control" placeholder="Descrição">
-                        </div>
+                            <div class="card-body" >
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <strong>Codigo Municipio:</strong>
+                                        <input type="text" name="codmunic" value="{{$vcidade->codmunic}}" class="form-control" placeholder="Codigo Municipio">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <strong>Codigo Regional:</strong>
+                                        <input type="text" name="codregional" value="{{$vcidade->codregional}}" class="form-control" placeholder="Código Regional">
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-12 col-md-12">
+                                        <strong>Município:</strong>
+                                        <input type="text"  name="municipio" value="{{$vcidade->municipio}}" class="form-control" placeholder="Município">
+                                    </div>
+                                    <div class="col-xs-12 col-sm-12 col-md-12">
+                                        <strong>Estado:</strong>
+
+                                        <select class="form-select" name="uf" id="uf">
+                                            <option value="" disabled selected> Selecione... </option>
+                                            @foreach ($vuf as $muf)
+                                                <option value="{{$muf->uf }}"    {{($muf->uf  == $vcidade->uf)   ? 'selected' :''}} > {{ $muf->estado }}</option>
+                                            @endforeach
+
+
+
+
+
+                                        </select>
+
+                                    </div>
+                                </div>
+
+                            </div>
                         </div>
                             <div class="card-footer d-flex justify-content-end">
                             <button type="submit" class="btn btn-primary">Gravar</button>

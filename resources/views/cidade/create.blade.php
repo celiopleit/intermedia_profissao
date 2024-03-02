@@ -25,9 +25,9 @@
 
                   <!-- Inicio do formulario -->
                     <div class="card-footer d-flex justify-content-center">
-                        <a class="btn btn-primary" href="{{ route('fluencia.index') }}">Voltar</a>
+                        <a class="btn btn-primary" href="{{ route('cidade.index') }}">Voltar</a>
                     </div>
-                    <form action="{{ route('fluencia.store') }}" method="POST">
+                    <form action="{{ route('cidade.store') }}" method="POST">
                         @csrf
 
                         <div class="card-body" >
