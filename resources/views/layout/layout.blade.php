@@ -29,6 +29,7 @@
                     <a class="dropdown-item" href="{{ route('profissao.index') }}">Profissão</a>
                     <a class="dropdown-item" href="{{ route('grauinstrucao.index') }}">Grau de Instrução</a>
                     <a class="dropdown-item" href="{{ route('cidade.index') }}">Cidades</a>
+                    <a class="dropdown-item" href="{{ route('comofala.index') }}">Como Fala Idioma</a>
                 </div>
 
           </li>
